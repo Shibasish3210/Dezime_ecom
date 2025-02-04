@@ -31,6 +31,11 @@
     color: var(--CED-Purple, #3d3d53);
   }
 
+  .price_tag {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
   .brand {
     color: #777;
   }
@@ -84,12 +89,15 @@
   margin-bottom: 12px;
 }
 /* Responsive Design */
-@media (max-width: 560px) {
+@media (max-width: 760px) {
   .product-detail {
     padding: 10px;
 
     h2 {
       font-size: 20px;
+    }
+    .price_tag {
+      font-size: 14px;
     }
 
     .price {
@@ -102,7 +110,7 @@
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 768px) {
   .product-detail {
     max-width: 100%;
   }

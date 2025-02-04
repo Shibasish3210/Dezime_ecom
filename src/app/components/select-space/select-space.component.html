@@ -1,9 +1,11 @@
 <div [class.expanded]="isOpen" class="cost-summary">
   <div class="header" (click)="!isDesktop && (isOpen = !isOpen)">
-    <span>Select space to apply</span>
-    <select class="dropdown">
-      <option selected>Ground floor</option>
-      <option *ngFor="let space of spaces">{{ space }}</option>
+    <span class="header-text">Select space to apply</span>
+    <select class="dropdown text_small" >
+      <option  selected>Ground floor</option>
+      <option class="text_small" *ngFor="let space of spaces">
+        {{ space }}
+      </option>
     </select>
   </div>
 

@@ -9,7 +9,7 @@ export class ProductVariationsComponent {
   heights: string[] = ['12 inch', '24 inch', '36 inch'];
   widths: string[] = ['12 inch', '24 inch', '36 inch'];
 
-  stackableQuantity: number = 1;
+  stackableQuantity: number = 0;
 
   productTypes = [
     {

@@ -21,14 +21,20 @@
             class="location-icon"
           />
         </div>
-        <div *ngIf="false" class="dropdown">
-          <div class="dropdown-item">Mumbai</div>
-          <div class="dropdown-item">Bangalore</div>
-          <div class="dropdown-item">Hyderabad</div>
-        </div>
       </div>
-      <button class="log-in">Log In</button>
-      <button class="talk-to-expert">Talk to an Expert</button>
+      <button *ngIf="isDesktop" class="log-in">Log In</button>
+      <button *ngIf="!isDesktop" class="log-in">
+        <img src="assets/svgs/person.svg" alt="" />
+      </button>
+      <button *ngIf="isDesktop" class="talk-to-expert">
+        Talk to an Expert
+      </button>
+      <button *ngIf="!isDesktop" class="talk-to-expert">
+        <img src="assets/svgs/support.svg" alt="" />
+      </button>
+      <button *ngIf="isBurgerMenuVisible" class="menu">
+        <img src="assets/svgs/menu.svg" alt="">
+      </button>
     </div>
   </div>
 </nav>

@@ -31,3 +31,12 @@ body {
   color: var(--CED-PURPLE-2, #6e6e7e);
   font-size: 14px;
 }
+
+@media screen and (max-width: 768px) {
+  .text_small {
+    font-size: 12px;
+  }
+  .text_smallest {
+    font-size: 10px;
+  }
+}

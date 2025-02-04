@@ -5,8 +5,8 @@
 /* Grid View for larger screens */
 .product-grid {
   display: grid;
-  grid-template-columns: 76% 24%;
-  gap: 15px;
+  grid-template-columns: 75% 24%;
+  gap: 8px;
   .side-images {
     display: flex;
     flex-direction: column;
@@ -72,23 +72,38 @@
   }
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
   .product-grid {
-    display: none; // Hide grid view
+    display: none;
   }
 
   .product-carousel {
     display: flex;
   }
 }
-
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1220px) {
+  .product-image.main {
+    min-width: 330px !important;
+    height: 100%;
+  }
+  .product-image {
+    min-width: 125px !important;
+  }
   .product-grid {
-    // grid-template-columns: repeat(1, 1fr); // 4 columns on larger screens
+    grid-template-columns: 70% 28%;
   }
 
+}
+
+@media (min-width: 768px) {
   .product-carousel {
-    display: none; // Hide carousel on larger screens
+    display: none;
+  }
+}
+
+@media (max-width: 1155px) {
+  .product-grid {
+    grid-template-columns: 70% 28%;
   }
 }

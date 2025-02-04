@@ -1,14 +1,20 @@
 <div class="product-variations">
   <!-- Selection Dropdowns -->
   <div class="selection-row">
-    <select class="dropdown">
-      <option selected>Select height</option>
-      <option *ngFor="let height of heights">{{ height }}</option>
-    </select>
-    <select class="dropdown">
-      <option selected>Select width</option>
-      <option *ngFor="let width of widths">{{ width }}</option>
-    </select>
+    <div>
+      <p class="text_small">Select height</p>
+      <select class="dropdown">
+        <option selected>Select height</option>
+        <option *ngFor="let height of heights">{{ height }}</option>
+      </select>
+    </div>
+    <div>
+      <p class="text_small">Select width</p>
+      <select class="dropdown">
+        <option selected>Select width</option>
+        <option *ngFor="let width of widths">{{ width }}</option>
+      </select>
+    </div>
   </div>
 
   <!-- Product Types -->
@@ -52,7 +58,12 @@
                 *ngFor="let prod of product?.products; let i = index"
                 (click)="toggleSelection(type, product, true, i)"
               >
-                <img [src]="prod.image" class="mini-product-image" alt="" [class.selected]="prod.selected" />
+                <img
+                  [src]="prod.image"
+                  class="mini-product-image"
+                  alt=""
+                  [class.selected]="prod.selected"
+                />
               </div>
             </div>
           </div>

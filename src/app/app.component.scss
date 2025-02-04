@@ -46,7 +46,7 @@ nav {
 
       button {
         border: none;
-        height: 39px;
+        min-height: 39px;
         padding: 10px 16px;
         border-radius: 5px;
         font-weight: 700;
@@ -60,6 +60,9 @@ nav {
       }
       .talk-to-expert {
         background: var(--CED-brand-color, #07c189);
+      }
+      .menu{
+        background: transparent;
       }
       .dropdown-container {
         cursor: pointer;
@@ -81,5 +84,25 @@ main {
     align-items: center;
     gap: 10px;
     border: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    padding-inline: 0.75rem;
+  }
+
+  .links,
+  .selected-value {
+    display: none !important;
+  }
+
+  nav{
+    padding-inline: 0.75rem;
+  }
+}
+@media screen and (max-width: 1185px) {
+  main {
+    padding-inline: 1rem;
   }
 }
