@@ -1,0 +1,46 @@
+<div class="product-detail">
+  <div class="top">
+    <div>
+      <small class="brand text_small">Brand/Manufacturer Name</small>
+      <h2 class="prod-name">{{ productDetails.name }}</h2>
+    </div>
+    <div class="price-details">
+      <div class="price">
+        <small class="text_smallest">Product</small>
+        <div class="act_price">
+          <small>₹</small>
+          <p>{{ productDetails.price }}</p>
+          <small>/sqft</small>
+        </div>
+      </div>
+      <div class="application_price">
+        <p class="text_smallest">Application</p>
+        <div class="act_price">
+          <small>₹</small>
+          <p>{{ productDetails.applicationCost }}</p>
+          <small>/sqft</small>
+        </div>
+      </div>
+    </div>
+
+  </div>
+    <div class="productDetails-image">
+      <app-products-display
+        [productImages]="productDetails.imageUrl"
+      ></app-products-display>
+    </div>
+
+    <div class="productDetails-description">
+      <div class="productDetails-heading">
+        <small class="text_small">Product categories/ Sub category </small>
+        <h3 class="text_sub_heading">Product Description</h3>
+      </div>
+      <p class="first_line">{{ productDetails.description }}</p>
+      <p>{{ productDetails.details }}</p>
+    </div>
+
+    <div class="select-variations">
+      <h3 class="text_smaller_sub_heading">Select Variations</h3>
+      <app-product-variations></app-product-variations>
+    </div>
+</div>

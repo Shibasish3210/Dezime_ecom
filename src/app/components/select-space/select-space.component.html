@@ -1,0 +1,89 @@
+<div [class.expanded]="isOpen" class="cost-summary">
+  <div class="header" (click)="!isDesktop && (isOpen = !isOpen)">
+    <span>Select space to apply</span>
+    <select class="dropdown">
+      <option selected>Ground floor</option>
+      <option *ngFor="let space of spaces">{{ space }}</option>
+    </select>
+  </div>
+
+  <div class="product-list" *ngIf="isDesktop || isOpen">
+    <div *ngFor="let item of products" class="product-card">
+      <div class="product-header">
+        <span class="title text_small">{{ item.space }}</span>
+        <span class="dimensions text_smallest">{{ item.size }}</span>
+      </div>
+      <div class="product-details">
+        <small class="category text_smallest">Product category</small>
+        <p class="name text_small">Product name</p>
+      </div>
+      <div class="cost-info">
+        <div>
+          <p class="cost-label">COST VARIATION</p>
+          <p
+            class="cost-value text-small"
+            [ngClass]="{ positive: item.cost > 0, negative: item.cost < 0 }"
+          >
+            {{ item.cost | currency : "INR" : "symbol" : "1.0" }}
+          </p>
+        </div>
+        <button
+          class="action-btn"
+          [ngClass]="{ 'apply-btn': !item.applied, 'revert-btn': item.applied }"
+          (click)="toggleApply(item)"
+        >
+          {{ item.applied ? "Revert" : "Apply" }}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="total-cost">
+    <div>
+      <div class="text_smallest">Total cost variation</div>
+      <div>
+        <div
+          class="total-value text_sub_heading"
+          [ngClass]="{ positive: totalCost > 0, negative: totalCost < 0 }"
+        >
+          <span>{{ totalCost > 0 ? "+" : "" }}</span>
+          <span>{{ totalCost | currency : "INR" : "symbol" : "1.0" }}</span>
+        </div>
+      </div>
+    </div>
+    <button class="apply-changes-btn text_smaller_sub_heading">
+      Apply changes
+    </button>
+  </div>
+</div>
+
+<!-- <div class="cost-summary" [class.expanded]="isExpanded">
+  <div class="cost-summary-header" (click)="toggleExpand()">
+    <span>Select space to apply</span>
+    <select>
+      <option>Ground floor</option>
+    </select>
+  </div>
+
+  <div class="cost-summary-content" *ngIf="isExpanded || isDesktop">
+    <div *ngFor="let item of costItems" class="cost-item">
+      <div class="info">
+        <p class="title">Master Bathroom</p>
+        <p class="category">Product category</p>
+        <p class="product-name">Product name</p>
+        <p class="cost-variation" [ngClass]="{'positive': item.amount > 0, 'negative': item.amount < 0}">
+          {{ item.amount > 0 ? '+' : '' }} ₹{{ item.amount }}
+        </p>
+      </div>
+      <button *ngIf="item.applied" class="revert">Revert</button>
+      <button *ngIf="!item.applied" class="apply">Apply</button>
+    </div>
+
+    <div class="total">
+      <p>Total cost variation</p>
+      <p class="total-amount">{{ totalCost > 0 ? '+' : '' }} ₹{{ totalCost }}</p>
+    </div>
+
+    <button class="apply-changes">Apply changes</button>
+  </div>
+</div> -->

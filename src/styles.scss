@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap");
+
+*,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", serif, system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  overflow-x: hidden;
+}
+
+.text_sub_heading {
+  color: var(--CED-Purple, #3d3d53);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.text_smaller_sub_heading {
+  color: var(--CED-Purple, #3d3d53);
+  font-size: 16px;
+  font-weight: 700;
+}
+.text_smallest {
+  color: var(--CED-PURPLE-2, #6e6e7e);
+  font-size: 12px;
+}
+.text_small {
+  color: var(--CED-PURPLE-2, #6e6e7e);
+  font-size: 14px;
+}

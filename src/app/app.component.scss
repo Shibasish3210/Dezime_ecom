@@ -1,0 +1,85 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: #222228;
+  color: white;
+  padding-inline: 4rem;
+
+  .fake-logo {
+    background: linear-gradient(#00ffff52, #91e6b3);
+    width: 120px;
+    height: 60px;
+    cursor: pointer;
+  }
+
+  .right-nav {
+    display: flex;
+    align-items: center;
+
+    .links {
+      display: flex;
+      gap: 1rem;
+      padding-inline: 1rem;
+
+      a {
+        text-decoration: none;
+        color: var(--White, #fff);
+        font-size: 16px;
+        font-weight: 700;
+      }
+    }
+
+    .user-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      .selected-value {
+        display: flex;
+        height: 32px;
+        padding: 4px 8px;
+        align-items: center;
+        gap: 4px;
+        border-radius: 5px;
+        border: 1px solid var(--Border-Light, #e2e2e2);
+      }
+
+      button {
+        border: none;
+        height: 39px;
+        padding: 10px 16px;
+        border-radius: 5px;
+        font-weight: 700;
+        font-size: 16px;
+        color: inherit;
+        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+      }
+      .log-in {
+        background: var(--Action-Text, #2073e5);
+      }
+      .talk-to-expert {
+        background: var(--CED-brand-color, #07c189);
+      }
+      .dropdown-container {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+main {
+  margin-top: 1rem;
+  padding-inline: 3rem;
+  .back {
+    color: var(--CED-Purple, #3d3d53);
+    background-color: transparent;
+    font-size: 16px;
+    font-weight: 700;
+    display: flex;
+    padding: 10px 16px;
+    align-items: center;
+    gap: 10px;
+    border: none;
+  }
+}

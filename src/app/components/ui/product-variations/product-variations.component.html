@@ -1,0 +1,79 @@
+<div class="product-variations">
+  <!-- Selection Dropdowns -->
+  <div class="selection-row">
+    <select class="dropdown">
+      <option selected>Select height</option>
+      <option *ngFor="let height of heights">{{ height }}</option>
+    </select>
+    <select class="dropdown">
+      <option selected>Select width</option>
+      <option *ngFor="let width of widths">{{ width }}</option>
+    </select>
+  </div>
+
+  <!-- Product Types -->
+  <div *ngFor="let type of productTypes; let i = index">
+    <h3
+      *ngIf="type.name; else elseTemplate"
+      class="type-heading text_smaller_sub_heading"
+    >
+      Select type {{ i + 1 }}
+    </h3>
+    <div class="product-grid">
+      <div
+        class="product-card"
+        *ngFor="let product of type.products"
+        (click)="toggleSelection(type, product)"
+      >
+        <img
+          [class.selected]="product.selected"
+          [src]="product.image"
+          class="product-image"
+          alt=""
+        />
+        <div class="lower-box">
+          <div class="checkbox-container" *ngIf="type.allowMultiple">
+            <input type="checkbox" [(ngModel)]="product.selected" />
+          </div>
+          <p class="product-label">{{ product.label }}</p>
+        </div>
+      </div>
+    </div>
+    <ng-template #elseTemplate>
+      <div class="lower-grid">
+        <div *ngFor="let product of type.productArray">
+          <div>
+            <h3 class="type-heading text_smaller_sub_heading">
+              Select type {{ product.name }}
+            </h3>
+            <div class="mini-product-grid">
+              <div
+                class="mini-product-card"
+                *ngFor="let prod of product?.products; let i = index"
+                (click)="toggleSelection(type, product, true, i)"
+              >
+                <img [src]="prod.image" class="mini-product-image" alt="" [class.selected]="prod.selected" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+    <div class="quantity-container" *ngIf="type.isStackable">
+      <button
+        class="quantity-dec"
+        [disabled]="stackableQuantity < 1"
+        (click)="stackableQuantity = stackableQuantity - 1"
+      >
+        -
+      </button>
+      <p class="quantity">{{ stackableQuantity }}</p>
+      <button
+        class="quantity-inc"
+        (click)="stackableQuantity = stackableQuantity + 1"
+      >
+        +
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,135 @@
+.product-variations {
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px 0;
+}
+
+.selection-row {
+  display: flex;
+  justify-content: flex-start;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.dropdown {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.type-heading {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.product-grid {
+  display: grid;
+  width: 75%;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 10px;
+}
+.mini-product-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+.lower-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.product-card {
+  background: #fff;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+  .lower-box {
+    display: flex;
+    gap: 5px;
+  }
+}
+.mini-product-card {
+  background: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+.text_smaller_sub_heading {
+  margin-block: 1rem;
+}
+.product-image {
+  min-width: 110px;
+  min-height: 110px;
+  border-radius: 5px;
+  object-fit: cover;
+  &.selected {
+    border: 2px solid #007bff;
+  }
+}
+.mini-product-image {
+  min-width: 60px;
+  min-height: 60px;
+  border-radius: 5px;
+  object-fit: cover;
+  border: 2px solid transparent;
+  &.selected {
+    border: 2px solid #007bff;
+  }
+}
+
+.product-label {
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 5px;
+}
+
+.checkbox-container {
+  margin-top: 5px;
+}
+
+.quantity-container {
+  display: flex;
+  align-items: center;
+  margin-top: 0.75rem;
+  gap: 10px;
+}
+.quantity-dec,
+.quantity-inc {
+  width: 24px;
+  height: 24px;
+  border-radius: 3px;
+  background: #efefef;
+  border: none;
+  font-size: 20px;
+}
+
+.quantity {
+  color: var(--CED-PURPLE-3, #9d9da8);
+  font-size: 14px;
+  font-weight: 700;
+}
+@media (max-width: 768px) {
+  .selection-row {
+    flex-direction: column;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .product-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}

@@ -1,0 +1,32 @@
+<div class="product-gallery">
+  <!-- Grid View for larger screens -->
+  <div class="product-grid" *ngIf="!isMobileView">
+    <img [src]="productImages[0]" alt="product" class="product-image main" />
+    <div class="side-images">
+      <img [src]="productImages[1]" alt="product" class="product-image" />
+      <img [src]="productImages[2]" alt="product" class="product-image" />
+      <img [src]="productImages[3]" alt="product" class="product-image" />
+    </div>
+  </div>
+
+  <!-- Custom Carousel for smaller screens -->
+  <div class="product-carousel" *ngIf="isMobileView">
+    <div class="carousel-container">
+      <img
+        [src]="productImages[currentIndex]"
+        class="carousel-image"
+        alt="product"
+      />
+    </div>
+
+    <div class="slide-indicators">
+      <button
+        *ngFor="let item of slideIndices; let i = index"
+        [class.active]="i === currentIndex"
+        (click)="goToSlide(i)"
+        class="go_to_slide"
+      ></button>
+    </div>
+
+  </div>
+</div>
