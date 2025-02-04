@@ -44,10 +44,6 @@
   background: #fff;
   cursor: pointer;
   transition: 0.3s ease-in-out;
-
-  &:hover {
-    transform: scale(1.05);
-  }
   .lower-box {
     display: flex;
     gap: 5px;
@@ -131,6 +127,14 @@
   }
 }
 
+@media screen and (min-width: 350px) and (max-width: 405px) {
+  .product-image {
+    min-width: 0px;
+    min-height: 0px;
+    width: 90px;
+    height: 90px;
+  }
+}
 @media screen and (min-width: 420px) and (max-width: 768px) {
   .mini-product-grid {
     width: 80%;
